@@ -4,20 +4,21 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
-	"github.com/halfrost/LeetCode-Go/ctl/util"
-	"github.com/spf13/cobra"
 	"io"
 	"io/ioutil"
 	"os"
 	"regexp"
 	"strings"
+
+	"github.com/halfrost/LeetCode-Go/ctl/util"
+	"github.com/spf13/cobra"
 )
 
 var (
-	chapterOneFileOrder = []string{"_index", "Data_Structure", "Algorithm"}
-	chapterOneMenuOrder = []string{"_index", "#关于作者", "Data_Structure", "Algorithm"}
+	chapterOneFileOrder = []string{"_index", "Data_Structure", "Algorithm", "Time_Complexity"}
+	chapterOneMenuOrder = []string{"_index", "#关于作者", "Data_Structure", "Algorithm", "Time_Complexity"}
 	chapterTwoFileOrder = []string{"_index", "Array", "String", "Two_Pointers", "Linked_List", "Stack", "Tree", "Dynamic_Programming", "Backtracking", "Depth_First_Search", "Breadth_First_Search",
-		"Binary_Search", "Math", "Hash_Table", "Sort", "Bit_Manipulation", "Union_Find", "Sliding_Window", "Segment_Tree", "Binary_Indexed_Tree"}
+		"Binary_Search", "Math", "Hash_Table", "Sorting", "Bit_Manipulation", "Union_Find", "Sliding_Window", "Segment_Tree", "Binary_Indexed_Tree"}
 	chapterThreeFileOrder = []string{"_index", "Segment_Tree", "UnionFind", "LRUCache", "LFUCache"}
 	preNextHeader         = "----------------------------------------------\n<div style=\"display: flex;justify-content: space-between;align-items: center;\">\n"
 	preNextFotter         = "</div>"
@@ -34,10 +35,10 @@ var (
 
 	chapterMap = map[string]map[string]string{
 		"ChapterOne": {
-			"_index":         "第一章 序章",
-			"#关于作者":          "1.1 关于作者",
-			"Data_Structure": "1.2 数据结构知识",
-			"Algorithm":      "1.3 算法知识",
+			"_index":          "第一章 序章",
+			"Data_Structure":  "1.1 数据结构知识",
+			"Algorithm":       "1.2 算法知识",
+			"Time_Complexity": "1.3 时间复杂度",
 		},
 		"ChapterTwo": {
 			"_index":               "第二章 算法专题",
@@ -54,7 +55,7 @@ var (
 			"Binary_Search":        "2.11 Binary Search",
 			"Math":                 "2.12 Math",
 			"Hash_Table":           "2.13 Hash Table",
-			"Sort":                 "2.14 ✅ Sort",
+			"Sorting":              "2.14 ✅ Sorting",
 			"Bit_Manipulation":     "2.15 ✅ Bit Manipulation",
 			"Union_Find":           "2.16 ✅ Union Find",
 			"Sliding_Window":       "2.17 ✅ Sliding Window",
